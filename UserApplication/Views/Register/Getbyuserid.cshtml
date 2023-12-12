@@ -1,0 +1,37 @@
+﻿@model UserApplication.Models.RegisterModel
+
+@{
+    ViewData["Title"] = "Getbyuserid";
+    Layout = null;
+}
+
+<h1>Getbyuserid</h1>
+
+<div>
+    <h4>RegisterModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a onclick="ShowInPopup('@Url.Action("EditUser","Register",new{id=Model.UserId},Context.Request.Scheme)')" class="btn btn-success text-white"><i class="fas fa-random"></i>Edit</a> |
+    <a asp-action="AllUsers">Back to List</a>
+</div>
